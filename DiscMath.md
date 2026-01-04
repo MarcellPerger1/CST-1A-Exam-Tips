@@ -9,11 +9,12 @@ If the logic gets confusing, just do the really rigorous stuff, fully writing ou
 Exam tips: simply use the definitions, those usually help if you don't remember identities and stuff like that.
 
 #### Euclid's Lemma
-$$\forall p\in\mathbb{P}\ .\ p\mid ab \implies p\mid a\ \lor\ p\mid b$$
+$$\forall p\in\mathbb{P}\ .\ p\mid ab \implies p\mid a\ \lor\ p\mid b\tag{1.1}$$
 
 Generalised to:
 
-$$k\mid nm\ \land\ \gcd(k,n)=1\implies k\mid m\tag{1.3}$$ 
+$$
+k\mid nm\ \land\ \gcd(k,n)=1\implies k\mid m\tag{1.2}$$ 
 
 Proof simply by using $m=m\gcd(k,n)$  and then gcd identities and the definition of 'divides'.
 
@@ -79,14 +80,14 @@ Thus, we get
 $$\gcd(n, m) = kn + lm\tag{6}$$
 
 ## Sets
-Cardinality: size of set, $\\#S$,  
+Cardinality: size of set, $\#S$,  
 
 Powerset: set of all of its subsets, $\mathcal{P}(U)$
 - $x\in\mathcal{P}(U)\iff x\subseteq U$
 - $\varnothing\in\mathcal{P}(U)$
 - $U\in\mathcal{P}(U)$
-- $\\#\mathcal{P}(U)=2^{\\#U}$
+- $\#\mathcal{P}(U)=2^{\#U}$
 
 Family: some set containing subsets of $U$, $\mathcal{F}\subseteq \mathcal{P}(U)$ (so $\mathcal{F}\in\mathcal{P}(\mathcal{P}(U))$).
 
-Product of 2 sets: $A\times B=\left\\{(a,b)\mid x\in A,b\in B\right\\}$.
+Product of 2 sets: $A\times B=\left\{(a,b)\mid x\in A,b\in B\right\}$.
