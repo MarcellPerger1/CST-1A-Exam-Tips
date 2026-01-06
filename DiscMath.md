@@ -34,6 +34,7 @@ $$\forall n\in\mathbb{Z}_p\ .\ n^{p-2} \equiv n^{-1}\pmod{p}\tag{2.3}$$
 ### `gcd`s
 #### Basics
 Remember these rules - they are ***very*** useful for proving stuff with `gcd`s:
+
 1. $$\gcd(n, m) = \gcd(m, n) \tag{3.1}$$
 2. $$\gcd(\gcd(l, n), m) = \gcd(l, \gcd(n, m))\tag{3.2}$$
 3. $$\gcd(lm, ln) = l\gcd(m, n)\tag{3.3}$$
@@ -72,7 +73,7 @@ Hence, &ensp; $\gcd(n + km, m) = \gcd(n, m)$.
 
 
 #### `egcd` (Extended gcd algorithm)
-Basically go down the recursive definition given in $(4)$, but also write down at each stage an equation for each argument in terms of the original arguments:
+Basically go down the recursive definition given in $(4)$, but also write down at each stage an equation for each argument in terms of the original arguments:  
 - In the original iteration, $n=N$ and $m=M$.
 - In later iterations, we already have one of them, and $\text{rem}(n, m) = n - (\text{quo}(n, m))m$ and use the $n$ and $m$ from the previous recursion iteration.
 
@@ -83,6 +84,7 @@ $$\gcd(n, m) = kn + lm\tag{6}$$
 Cardinality: size of set, $\#S$,  
 
 Powerset: set of all of its subsets, $\mathcal{P}(U)$
+
 - $x\in\mathcal{P}(U)\iff x\subseteq U$
 - $\varnothing\in\mathcal{P}(U)$
 - $U\in\mathcal{P}(U)$
