@@ -1,5 +1,7 @@
 _exclude/
 
 node_modules
+
 /*.raw.html
+out/raw/
 /output*.pdf
