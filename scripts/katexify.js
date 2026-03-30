@@ -69,6 +69,8 @@ export function transformFileToString(
       }
       mtable.prependTo(self);  // before annotations
     });
+    $('head').append('<style>mtd{padding: 0.5ex 0.4em;}</style>')
+    $('body').attr({style: 'max-width: 1000px; margin-left: auto; margin-right: auto;'});
     resolve($.html());
   }));
   return promise;
