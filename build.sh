@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+# TODO: cache built files, a la Make
 if [ -z "$1" ] ; then
     echo "Expected an argument"
     exit 1

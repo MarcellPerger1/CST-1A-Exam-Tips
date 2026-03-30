@@ -77,6 +77,8 @@ async function writeTransformedHtml(
   /**@type{string}*/h, /**@type{string}*/infile, /**@type{string}*/outfile
 ) {
   outfile ??= withSuffix(infile, '.katex.html');
+  const oDir = path.dirname(outfile);
+  await fs.promises.mkdir(oDir, {recursive: true});
   return await fs.promises.writeFile(outfile, h, {encoding: 'utf8'});
 }
 
