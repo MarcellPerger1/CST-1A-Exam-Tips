@@ -28,6 +28,6 @@ dn="$(dirname "$0")"
 echo "Converting Markdown to basic HTML" && 
     pandoc --katex "$1" -o "$it" && 
     echo "Adding MathML to HTML" &&
-    "$dn/build/katexify.js" "$it" -o "$html" && 
+    "$dn/scripts/katexify.js" "$it" -o "$html" && 
     echo "Converting HTML to PDF" &&
-    "$dn/build/ffhtmltopdf.js" "$html" -o "$pdf"
+    "$dn/scripts/ffhtmltopdf.js" "$html" -o "$pdf"

@@ -3,5 +3,5 @@ _exclude/
 node_modules
 
 /*.raw.html
-out/raw/
+res/raw/
 /output*.pdf
