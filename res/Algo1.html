@@ -1,0 +1,85 @@
+<html><head><style>mtd{padding: 0.5ex 0.4em;}</style></head><body style="max-width: 1000px; margin-left: auto; margin-right: auto;"><h1 id="algorithms-1">Algorithms 1</h1>
+<h2 id="basics-meta-stuff">Basics (Meta-stuff)</h2>
+<p>Generally, it seems more like algs1 was about proving the code (like
+start and end pointers and such) while algs2 is proving the
+algorithm.</p>
+<h3 id="time-complexity">Time complexity</h3>
+<p>Some formal definitions exists, you could know them, but generally
+it’s enough to say that: <span class="math display"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtable><mtr><mtd style="padding: 0"><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>o</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>g</mi><mo>&lt;</mo><mi>f</mi></mtd></mtr><mtr><mtd style="padding: 0"><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>g</mi><mo>≤</mo><mi>f</mi></mtd></mtr><mtr><mtd style="padding: 0"><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>g</mi><mo>=</mo><mi>f</mi></mtd></mtr><mtr><mtd style="padding: 0"><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>g</mi><mo>≥</mo><mi>f</mi></mtd></mtr><mtr><mtd style="padding: 0"><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>ω</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi>g</mi><mo>&gt;</mo><mi>f</mi></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+g(n)\in o(f(n)) \iff g &lt; f\\
+g(n)\in O(f(n)) \iff g \le f\\
+g(n)\in \Theta(f(n)) \iff g = f\\
+g(n)\in \Omega(f(n)) \iff g \ge f\\
+g(n)\in \omega(f(n)) \iff g &gt; f
+</annotation></semantics></math></span></span> (well, as <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">n\to\infty</annotation></semantics></math></span></span>, and
+ignoring constant factors)</p>
+<p>Can end up with recursive time-taken like <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>k</mi><mn>1</mn></msub><mo>+</mo><msub><mi>k</mi><mn>2</mn></msub><mi>n</mi><mo>+</mo><mn>2</mn><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)= k_1 + k_2n + 2T(n/2)</annotation></semantics></math></span></span>. Then can do: 1.
+Substitute into itself and spot a pattern 2. <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">D</mi><mi mathvariant="script">i</mi><mi mathvariant="script">a</mi><mi mathvariant="script">g</mi><mi mathvariant="script">r</mi><mi mathvariant="script">a</mi><mi mathvariant="script">m</mi><mtext>&nbsp;</mtext><mi mathvariant="script">T</mi><mi mathvariant="script">i</mi><mi mathvariant="script">m</mi><mi mathvariant="script">e</mi></mrow><annotation encoding="application/x-tex">\mathscr{Diagram\ Time}</annotation></semantics></math></span></span> 3. Master Theorem
+(see below) 4. Guess (include constants like <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span></span>, etc.) and then substitute it</p>
+<h3 id="master-theorem">Master Theorem</h3>
+<p>If <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><mi>T</mi><mo stretchy="false">(</mo><mfrac><mi>n</mi><mi>b</mi></mfrac><mo stretchy="false">)</mo><mo>+</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n) = aT(\frac{n}{b}) + f(n)</annotation></semantics></math></span></span>
+(and <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T(1)=1</annotation></semantics></math></span></span>, duh):</p>
+<p>Let <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mi>b</mi></msub><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">K=\log_b(a)</annotation></semantics></math></span></span>:</p>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr>
+<th>Case</th>
+<th>i.e.</th>
+<th></th>
+<th>Dominated by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mrow><mi>K</mi><mo>−</mo><mi>ε</mi></mrow></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(n)\in
+O\left(n^{K-\varepsilon}\right)</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>≲</mo><msup><mi>n</mi><mrow><mo fence="true">(</mo><mo>&lt;</mo><mi>K</mi><mo fence="true">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">f\lesssim
+n^{\left(&lt;K\right)}</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mi>K</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)\in \Theta(n^K)</annotation></semantics></math></span></span></td>
+<td>The recursion bit</td>
+</tr>
+<tr>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Θ</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mi>K</mi></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(n)\in\Theta\left(n^K\right)</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∼</mo><msup><mi>n</mi><mi>K</mi></msup></mrow><annotation encoding="application/x-tex">f\sim n^K</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mi>K</mi></msup><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)\in\Theta(n^K\log n)</annotation></semantics></math></span></span></td>
+<td>(Equal)</td>
+</tr>
+<tr>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Ω</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mrow><mi>K</mi><mo>+</mo><mi>ε</mi></mrow></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(n)\in\Omega\left(n^{K+\varepsilon}\right)</annotation></semantics></math></span></span>*</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>≳</mo><msup><mi>n</mi><mrow><mo stretchy="false">(</mo><mo>&gt;</mo><mi>K</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">f\gtrsim n^{(&gt;K)}</annotation></semantics></math></span></span>*</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)\in O(f(n))</annotation></semantics></math></span></span>*</td>
+<td>The work on the root node</td>
+</tr>
+</tbody>
+</table>
+<p>*if the regularity condition holds (must check?): <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mfrac><mi>n</mi><mi>b</mi></mfrac><mo stretchy="false">)</mo><mo>≤</mo><mi>c</mi><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\frac{n}{b})\le cf(n)</annotation></semantics></math></span></span> for some <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c&lt;1</annotation></semantics></math></span></span> (for all sufficiently large <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>, same <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span>
+for each). (Needed so it’s geometric sequence proper and not oscillating
+thing as then child may be more than parent)</p>
+<h3 id="proofs-of-correctness">Proofs of correctness</h3>
+<p>Super annoying. Induction most of the time: 1. Initialisation:
+statement true before a loop 2. Maintenance: statement invariant over
+the loop 3. Termination: statement must be true and end of loop; hope
+that it help you prove correctness</p>
+<h3 id="dynamic-programming">Dynamic Programming</h3>
+<p>Useful for optimisation problems (e.g.&nbsp;VM Hosting Problem).
+Effectively recursion plus cache. Requires: - Optimal substructure (best
+solution uses a best solution of one of the subproblems) - Overlapping
+subproblems (so can reuse results)</p>
+<p>Memoise previous results. Top-down (recursive, cache) or bottom-up
+(iterative, build up table from 0). Top-down easier to code but requires
+stack space (reuse order?). Bottom-up doesn’t require stack space but
+still requires the table (even for potentially-useless bits of the
+problem).</p>
+<h3 id="greedy-algorithm">Greedy Algorithm</h3>
+<p>Faster than DP. Make locally optimal choices (and these don’t rely on
+further computation) and prove that combining these yields a globally
+optimal solution. Effectively, greedy algorithms are DP where we choose
+which subproblem will be the optimal one (though might not do
+reuse).</p>
+</body></html>

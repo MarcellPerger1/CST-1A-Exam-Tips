@@ -1,0 +1,80 @@
+<html><head><style>mtd{padding: 0.5ex 0.4em;}</style></head><body style="max-width: 1000px; margin-left: auto; margin-right: auto;"><h1 id="introduction-to-probability">Introduction to Probability</h1>
+<h2 id="not-so-bad-stuff">Not-so-bad stuff</h2>
+<p>Combinatorics, DRVs (Bernoulli, Binomial, Poisson, Geometric,
+Negative Binomial, Hypergeometric), CRVs (Uniform, Exponential, Normal),
+expectation, moments, variance.</p>
+<h2 id="marginal-and-joint-distributions">Marginal and Joint
+Distributions</h2>
+<h2 id="independence-covariance-correlation">Independence, Covariance,
+Correlation</h2>
+<h2 id="limit-theorems-and-inequalities">Limit Theorems and
+Inequalities</h2>
+<h3 id="tailedness-inequalities">Tailedness Inequalities</h3>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr>
+<th>Name</th>
+<th>Conditions</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markov</td>
+<td>RV <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">X \ge 0</annotation></semantics></math></span></span>, <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">E</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo><mo>∈</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbf{E}[X]\in\mathbb{R}</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">[</mo><mi>X</mi><mo>≥</mo><mi>a</mi><mo stretchy="false">]</mo><mo>≤</mo><mfrac><mrow><mi mathvariant="bold">E</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><mi>a</mi></mfrac></mrow><annotation encoding="application/x-tex">P[X\ge a] \le
+\frac{\mathbf{E}[X]}{a}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td>Chebyshev</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">E</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mi mathvariant="bold">V</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo><mo>∈</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbf{E}[X],\mathbf{V}[X]\in\mathbb{R}</annotation></semantics></math></span></span></td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo fence="true">[</mo><mrow><mo fence="true">∥</mo><mi>X</mi><mo>−</mo><mi mathvariant="bold">E</mi><mrow><mo fence="true">[</mo><mi>X</mi><mo fence="true">]</mo></mrow><mo fence="true">∥</mo></mrow><mo>≥</mo><mi>a</mi><mo fence="true">]</mo></mrow><mo>≤</mo><mfrac><mrow><mi mathvariant="bold">V</mi><mo stretchy="false">[</mo><mi>X</mi><mo stretchy="false">]</mo></mrow><msup><mi>a</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">P\left[\left\|X-\mathbf{E}\left[X\right]\right\|\ge
+a\right]\le\frac{\mathbf{V}[X]}{a^2}</annotation></semantics></math></span></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="limit-theorems">Limit Theorems</h3>
+<p>Let <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\overline{X}_n =
+\frac{1}{n}\sum\limits_{i=1}^{n}X_i</annotation></semantics></math></span></span> where <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_i</annotation></semantics></math></span></span> are i.i.d. RVs.</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr>
+<th>Name</th>
+<th>What</th>
+<th>Theorem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weak Law of Large Numbers (WLoN*)</td>
+<td>Converges to</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mi mathvariant="bold">P</mi><mrow><mo fence="true">[</mo><mi mathvariant="normal">∥</mi><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>−</mo><mi>μ</mi><mi mathvariant="normal">∥</mi><mo>&gt;</mo><mi>ε</mi><mo fence="true">]</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim\limits_{n\to
+\infty}\mathbf{P}\left[\|\overline{X}_n
+-\mu\|&gt;\varepsilon\right]=0</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td>Strong Law of Large Numbers (SLoN*)</td>
+<td>Converges to (non-exam.)</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">P</mi><mrow><mo fence="true">[</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>=</mo><mi>μ</mi><mo fence="true">]</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathbf{P}\left[\lim\limits_{n\to\infty}\overline{X}_n=\mu\right]=1</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td>Central Limit Theorem (CLT)</td>
+<td>How it converges</td>
+<td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>n</mi></msqrt><mo>⋅</mo><mfrac><mrow><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>−</mo><mi>μ</mi></mrow><mi>σ</mi></mfrac><mo>∼</mo><mi>N</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sqrt{n}\cdot\frac{\overline{X}_n-\mu}{\sigma}\sim
+N(0,1)</annotation></semantics></math></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>*Only I call it that<br>
+**Technically <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msub><mi>F</mi><msub><mi>Z</mi><mi>n</mi></msub></msub><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\lim\limits_{n\to\infty}F_{Z_n}(a)=\Phi(a)</annotation></semantics></math></span></span></p>
+</body></html>
