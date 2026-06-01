@@ -14,3 +14,4 @@ N^TG^TMV=N^TV\\
 G^TM=I\\
 G=(M^{-1})^T
 $$
+

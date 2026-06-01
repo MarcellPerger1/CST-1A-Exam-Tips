@@ -13,14 +13,14 @@ function withSuffix(/**@type{string}*/p, /**@type{string}*/ext) {
 
 export async function main(/**@type{string}*/infile, /**@type{string}*/outfile) {
   outfile ??= withSuffix(infile, '.pdf');
-  console.log('(1/5) Launching Firefox');
+  console.log(`(4/8) ${"Launching Firefox".padEnd(34)} (${infile})`);
   const browser = await puppeteer.launch({browser: 'firefox'});  // plz work, don't crash!
   try {
     const page = await browser.newPage();
-    console.log('(2/5) Opening file');
+    console.log(`(5/8) ${"Opening file".padEnd(34)} (${infile})`);
     await page.goto(pathToFileURL(infile));
     await page.bringToFront();
-    console.log("(3/5) Printing to PDF");
+    console.log(`(6/8) ${"Printing to PDF".padEnd(34)} (${infile})`);
     const pdfStream = await page.pdf({
       format: 'A4', waitForFonts: true, 
       margin: {
@@ -30,9 +30,9 @@ export async function main(/**@type{string}*/infile, /**@type{string}*/outfile) 
         right: '0.5in',
       }
     });
-    console.log("(4/5) Writing file");
+    console.log(`(7/8) ${"Writing file".padEnd(34)} (${infile})`);
     await fs.promises.writeFile(outfile, pdfStream);
-    console.log("(5/5) Closing Firefox")
+    console.log(`(8/8) ${"Closing Firefox".padEnd(34)} (${infile})`)
   } finally {
     await browser.close();
   }

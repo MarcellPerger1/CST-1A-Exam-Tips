@@ -28,3 +28,4 @@ Let $\overline{X}_n = \frac{1}{n}\sum\limits_{i=1}^{n}X_i$ where $X_i$ are i.i.d
 
 *I sometimes call them SLoN/WLoN  
 **Technically $\lim\limits_{n\to\infty}F_{Z_n}(a)=\Phi(a)$
+

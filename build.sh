@@ -35,9 +35,9 @@ if [ ! -f "$1" ] ; then
     exit 1
 fi
 
-echo "Converting Markdown to basic HTML" && 
+echo "(1/8) Converting Markdown to basic HTML ($1)" && 
     pandoc --katex "$1" -o "$it" && 
-    echo "Adding MathML to HTML" &&
+    echo "(2/8) Adding MathML to HTML             ($it)" &&
     "$dn/scripts/katexify.js" "$it" -o "$html" && 
-    echo "Converting HTML to PDF" &&
+    echo "(3/8) Converting HTML to PDF            ($html)" &&
     "$dn/scripts/ffhtmltopdf.js" "$html" -o "$pdf"

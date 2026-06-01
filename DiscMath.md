@@ -98,3 +98,4 @@ Product of 2 sets: $A\times B=\left\{(a,b)\mid x\in A,b\in B\right\}$.
 ### Bijections
 
 To prove that $A\cong B$, if you can tell what the bijection is (very often this is the case), then do any trivial simplifications and then give your function ASAP and just show that it's a bijection (either via 'inverse is a function', or via 'surjective and injective', or via 'has section and retraction'). No need to complicate with non-trivial not-so-useful simplifications.
+

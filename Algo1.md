@@ -50,4 +50,3 @@ Memoise previous results. Top-down (recursive, cache) or bottom-up (iterative, b
 
 ### Greedy Algorithm
 Faster than DP. Make locally optimal choices (and these don't rely on further computation) and prove that combining these yields a globally optimal solution. Effectively, greedy algorithms are DP where we choose which subproblem will be the optimal one (though might not do reuse).
-
