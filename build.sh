@@ -5,6 +5,10 @@ if [ -z "$1" ] ; then
     echo "Expected an argument"
     exit 1
 fi
+if [ "$1" = "--help" ] ; then
+    echo "Usage: build.sh in, [[[internal,] html,] out]"
+    exit 0
+fi
 it="${1%.*}.raw.html"
 html="${1%.*}.html"
 pdf="${1%.*}.pdf"
@@ -25,6 +29,11 @@ if [ -n "$5" ] ; then
     exit 1
 fi
 dn="$(dirname "$0")"
+
+if [ ! -f "$1" ] ; then
+    echo "File not found: $1"
+    exit 1
+fi
 
 echo "Converting Markdown to basic HTML" && 
     pandoc --katex "$1" -o "$it" && 

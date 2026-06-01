@@ -2,7 +2,11 @@
 <h2 id="not-so-bad-stuff">Not-so-bad stuff</h2>
 <p>Combinatorics, DRVs (Bernoulli, Binomial, Poisson, Geometric,
 Negative Binomial, Hypergeometric), CRVs (Uniform, Exponential, Normal),
-expectation, moments, variance.</p>
+expectation, moments, variance. ### Expectation Often, when calculate
+expectation of annoying thing, use linearity of expectation (it works in
+spite of non-independence). So often just create a ton of indicator
+variables (often identically distributed) and sum over them. (Where each
+indicator variable’s probability is nigh-trivial to compute)</p>
 <h2 id="marginal-and-joint-distributions">Marginal and Joint
 Distributions</h2>
 <h2 id="independence-covariance-correlation">Independence, Covariance,
@@ -56,14 +60,14 @@ a\right]\le\frac{\mathbf{V}[X]}{a^2}</annotation></semantics></math></span></spa
 </thead>
 <tbody>
 <tr>
-<td>Weak Law of Large Numbers (WLoN*)</td>
+<td>Weak Law of Large Numbers (WLLN)</td>
 <td>Converges to</td>
 <td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mi mathvariant="bold">P</mi><mrow><mo fence="true">[</mo><mi mathvariant="normal">∥</mi><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>−</mo><mi>μ</mi><mi mathvariant="normal">∥</mi><mo>&gt;</mo><mi>ε</mi><mo fence="true">]</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim\limits_{n\to
 \infty}\mathbf{P}\left[\|\overline{X}_n
 -\mu\|&gt;\varepsilon\right]=0</annotation></semantics></math></span></span></td>
 </tr>
 <tr>
-<td>Strong Law of Large Numbers (SLoN*)</td>
+<td>Strong Law of Large Numbers (SLLN)</td>
 <td>Converges to (non-exam.)</td>
 <td><span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">P</mi><mrow><mo fence="true">[</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mi>n</mi></msub><mo>=</mo><mi>μ</mi><mo fence="true">]</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathbf{P}\left[\lim\limits_{n\to\infty}\overline{X}_n=\mu\right]=1</annotation></semantics></math></span></span></td>
 </tr>
@@ -75,6 +79,6 @@ N(0,1)</annotation></semantics></math></span></span></td>
 </tr>
 </tbody>
 </table>
-<p>*Only I call it that<br>
+<p>*I sometimes call them SLoN/WLoN<br>
 **Technically <span class="math inline"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msub><mi>F</mi><msub><mi>Z</mi><mi>n</mi></msub></msub><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\lim\limits_{n\to\infty}F_{Z_n}(a)=\Phi(a)</annotation></semantics></math></span></span></p>
 </body></html>
